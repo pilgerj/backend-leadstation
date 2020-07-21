@@ -24,6 +24,8 @@ markingsRouter.post('/', async (request, response) => {
     return response.status(200).json(newMarkedPoint);
 });
 
+//markingsRouter.delete('/:id')
+//construindo o delete point.
 
 export default markingsRouter;
 
