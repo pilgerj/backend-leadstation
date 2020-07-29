@@ -18,7 +18,6 @@ class CreateMarkedPointService {
                 longitude
             }
         });
-        console.log(findMarkedPoint)
 
         if(findMarkedPoint instanceof MarkedPoint){
             throw new Error('Mark point already exists.');

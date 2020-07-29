@@ -24,8 +24,18 @@ markingsRouter.post('/', async (request, response) => {
     return response.status(200).json(newMarkedPoint);
 });
 
-//markingsRouter.delete('/:id')
-//construindo o delete point.
+markingsRouter.delete('/:id', async (request, response) => {
+    const { id } = request.params;
+    
+    const markedPointRepository = getRepository(MarkedPoint);
+    
+    await markedPointRepository.delete(id);
+    
+    const markedPoints = await markedPointRepository.find();
+
+    return response.json(markedPoints);
+})
+
 
 export default markingsRouter;
 
